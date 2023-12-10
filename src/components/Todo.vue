@@ -9,32 +9,16 @@
     </ul>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-
-export default defineComponent({
-  name: 'Todo',
-  setup() {
-    const newTodo = ref('');
-    const todos = ref<string[]>([]);
-
-    const addTodo = () => {
-      if (newTodo.value.trim() !== '') {
-        todos.value.push(newTodo.value.trim());
-        newTodo.value = '';
-      }
-    };
-
-    return {
-      newTodo,
-      todos,
-      addTodo,
-    };
-  },
-});
+<script setup lang="ts">
 </script>
 
-<style scoped>
-/* Add your styles here */
-</style>
+
+<!-- <script setup lang="ts">
+import { ref } from 'vue'
+const newTodo = ref('')
+const todos = ref(['Learn Vue 3', 'Learn TypeScript', 'Learn Composition API'])
+const addTodo = () => {
+  todos.value.push(newTodo.value)
+  newTodo.value = ''
+}
+</script> -->
